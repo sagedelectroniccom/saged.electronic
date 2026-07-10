@@ -15,10 +15,109 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
+        }
+
+        /* Sign In Page */
+        #signinPage {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .signin-container {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            max-width: 100px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+
+        .logo h1 {
+            color: #ff0000;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ff0000;
+            box-shadow: 0 0 8px rgba(255,0,0,0.2);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 25px 0;
+        }
+
+        .form-group button {
+            background-color: #ff0000;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .form-group button:hover {
+            background-color: #cc0000;
+        }
+
+        /* Home Page */
+        #homePage {
+            display: none;
             background-color: #f4f4f4;
         }
-        
-        /* Navigation */
+
         nav {
             background: linear-gradient(135deg, #ff0000, #cc0000);
             padding: 15px 0;
@@ -27,7 +126,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 100;
         }
-        
+
         nav ul {
             list-style: none;
             display: flex;
@@ -35,35 +134,54 @@
             gap: 30px;
             flex-wrap: wrap;
         }
-        
-        nav a {
+
+        nav a, nav button {
             color: white;
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
-            transition: opacity 0.3s;
             padding: 8px 15px;
             border-radius: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        
-        nav a:hover {
+
+        nav button:hover, nav a:hover {
             background-color: rgba(255,255,255,0.2);
-            opacity: 0.9;
         }
-        
-        nav a.active {
-            background-color: rgba(255,255,255,0.3);
-            border-bottom: 3px solid white;
-        }
-        
-        /* Container */
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-        /* Header */
+
+        .welcome-banner {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: center;
+            border-left: 5px solid #ff0000;
+        }
+
+        .welcome-banner h2 {
+            color: #ff0000;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .user-info {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            color: #856404;
+        }
+
         header {
             text-align: center;
             background: white;
@@ -72,20 +190,19 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             margin-bottom: 40px;
         }
-        
+
         header h1 {
             color: #ff0000;
             font-size: 48px;
             margin-bottom: 15px;
         }
-        
+
         header img {
             max-width: 150px;
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        
-        /* Sections */
+
         .section {
             background: white;
             padding: 30px;
@@ -93,7 +210,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+
         .section h2 {
             color: #ff0000;
             font-size: 36px;
@@ -101,21 +218,21 @@
             border-bottom: 3px solid #ff0000;
             padding-bottom: 10px;
         }
-        
+
         .section h3 {
             color: #333;
             font-size: 24px;
             margin-top: 20px;
             margin-bottom: 10px;
         }
-        
+
         .section p {
             font-size: 16px;
             line-height: 1.8;
             color: #555;
             margin-bottom: 15px;
         }
-        
+
         .section img {
             max-width: 100%;
             height: auto;
@@ -123,8 +240,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
-        /* Footer */
+
         footer {
             background: #333;
             color: white;
@@ -133,12 +249,12 @@
             margin-top: 40px;
             border-radius: 8px;
         }
-        
+
         footer h3 {
             margin-bottom: 20px;
             font-size: 24px;
         }
-        
+
         footer button {
             background-color: #ff0000;
             color: white;
@@ -150,151 +266,109 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        
+
         footer button:hover {
             background-color: #cc0000;
         }
-        
+
         footer a {
             text-decoration: none;
-            color: white;
         }
-        
+
         footer p {
             margin-top: 20px;
             color: #aaa;
             font-size: 14px;
         }
-        
-        /* Sign In Form */
-        .signin-form {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 500px;
-            margin: 30px auto;
-        }
-        
-        .signin-form h2 {
-            text-align: center;
-            color: #ff0000;
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #ff0000;
-            box-shadow: 0 0 5px rgba(255,0,0,0.3);
-        }
-        
-        .form-group input[type="submit"] {
-            background-color: #ff0000;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        
-        .form-group input[type="submit"]:hover {
-            background-color: #cc0000;
-        }
-        
-        .toggle-form {
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        .toggle-form button {
-            background-color: #ff0000;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        
-        .toggle-form button:hover {
-            background-color: #cc0000;
-        }
-        
-        #signinSection {
-            display: none;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 32px;
-            }
-            
-            nav ul {
-                gap: 15px;
-            }
-            
-            .section {
-                padding: 20px;
-            }
-            
-            .section h2 {
-                font-size: 28px;
-            }
-            
-            .section h3 {
-                font-size: 20px;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home" onclick="showHome()" class="active">🏠 Home</a></li>
-            <li><a href="#electronics" onclick="scrollToSection('electronics')">📱 Electronics</a></li>
-            <li><a href="#arduino" onclick="scrollToSection('arduino')">🤖 Arduino</a></li>
-            <li><a href="#signin" onclick="showSignin()">🔐 Sign In</a></li>
-        </ul>
-    </nav>
+    <!-- SIGN IN PAGE -->
+    <div id="signinPage">
+        <div class="signin-container">
+            <div class="logo">
+                <img src="https://yt3.googleusercontent.com/YrSWdYvPX4Kq8LLYbcpd8xNsvV5tfGqz6JW5i6ivscDWJctntgXTHhXRnoCk-0LJ0n0IUAUX=s120-c-k-c0x00ffffff-no-rj" alt="Saged Electronics Logo">
+                <h1>Saged Electronics</h1>
+                <p>Welcome to Our Community</p>
+            </div>
 
-    <div class="container">
-        <!-- Header -->
-        <header id="home">
-            <h1>Saged Electronics</h1>
-            <p style="font-size: 18px; color: #666; margin-top: 10px;">Educational Electronics & Arduino Projects</p>
-            <img src="https://yt3.googleusercontent.com/YrSWdYvPX4Kq8LLYbcpd8xNsvV5tfGqz6JW5i6ivscDWJctntgXTHhXRnoCk-0LJ0n0IUAUX=s120-c-k-c0x00ffffff-no-rj" alt="Saged Electronics Logo">
-        </header>
+            <div style="margin-bottom: 20px;">
+                <div class="form-group">
+                    <label for="username">👤 Username:</label>
+                    <input id="username" type="text" placeholder="Enter your username" required>
+                </div>
 
-        <!-- Main Content -->
-        <div id="mainContent">
+                <div class="form-group">
+                    <label for="password">🔒 Password:</label>
+                    <input id="password" type="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="form-group">
+                    <label for="birthday">🎂 Enter Your Birthday:</label>
+                    <input id="birthday" type="date" required>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="form-group">
+                    <label for="country">🌍 Choose Your Country:</label>
+                    <select id="country" required>
+                        <option value="">-- Select a Country --</option>
+                        <option value="egy">Egypt</option>
+                        <option value="mor">Morocco</option>
+                        <option value="sa">Saudi Arabia</option>
+                        <option value="uae">United Arab Emirates</option>
+                        <option value="eng">England</option>
+                        <option value="ita">Italy</option>
+                        <option value="spa">Spain</option>
+                        <option value="fra">France</option>
+                        <option value="ira">Iraq</option>
+                        <option value="por">Portugal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button onclick="handleSignIn()">Sign In & Continue →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="homePage">
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="scrollToTop()">🏠 Home</a></li>
+                <li><a href="#electronics" onclick="scrollTo('electronics')">📱 Electronics</a></li>
+                <li><a href="#arduino" onclick="scrollTo('arduino')">🤖 Arduino</a></li>
+                <li><button onclick="logout()">🚪 Logout</button></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <h2>👋 Welcome, <span id="displayName">User</span>!</h2>
+                <p>You have successfully logged into Saged Electronics</p>
+                <div class="user-info">
+                    <p><strong>📍 Country:</strong> <span id="displayCountry">-</span></p>
+                    <p><strong>🎂 Birthday:</strong> <span id="displayBirthday">-</span></p>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <header id="home">
+                <h1>Saged Electronics</h1>
+                <p style="font-size: 18px; color: #666; margin-top: 10px;">Educational Electronics & Arduino Projects</p>
+                <img src="https://yt3.googleusercontent.com/YrSWdYvPX4Kq8LLYbcpd8xNsvV5tfGqz6JW5i6ivscDWJctntgXTHhXRnoCk-0LJ0n0IUAUX=s120-c-k-c0x00ffffff-no-rj" alt="Saged Electronics Logo">
+            </header>
+
             <!-- Electronics Section -->
             <div class="section" id="electronics">
                 <h2>⚡ Electronics</h2>
-
                 <h3>🔧 Motors Section</h3>
                 <p>A motor is an electrical device that converts electrical energy into mechanical energy (motion). It works by using magnetic forces to make a shaft rotate, allowing machines, fans, pumps, and many other devices to move.</p>
 
@@ -313,7 +387,6 @@
             <!-- Arduino Section -->
             <div class="section" id="arduino">
                 <h2>🤖 Arduino</h2>
-
                 <h3>🔩 Arduino Parts</h3>
                 <p>Arduino parts are the components that make up an Arduino board and allow it to receive input, process information, and control other devices. Examples of arduino parts include: Microcontroller (the "brain" of the Arduino that runs the program), USB Port (used to connect the Arduino to a computer for programming and power), Power Jack (used to supply external power), Digital Pins (used for digital input and output), Analog Pins (used to read analog signals from sensors), Reset Button (restarts the Arduino program), and Power Pins (provide power 5V, 3.3V, GND to components).</p>
 
@@ -327,85 +400,70 @@
             </div>
         </div>
 
-        <!-- Sign In Section -->
-        <div id="signinSection">
-            <div class="signin-form">
-                <h2>🔐 Sign In</h2>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input id="username" type="text" name="username" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input id="password" type="password" name="password" required>
-                    </div>
-
-                    <hr style="margin: 20px 0; border: 1px solid #ddd;">
-
-                    <div class="form-group">
-                        <label for="birthday">Enter Your Birthday:</label>
-                        <input id="birthday" type="date" name="birthday" required>
-                    </div>
-
-                    <hr style="margin: 20px 0; border: 1px solid #ddd;">
-
-                    <div class="form-group">
-                        <label for="country">Choose Your Country:</label>
-                        <select name="country" id="country" required>
-                            <option value="">-- Select a Country --</option>
-                            <option value="egy">Egypt</option>
-                            <option value="mor">Morocco</option>
-                            <option value="sa">Saudi Arabia</option>
-                            <option value="uae">United Arab Emirates</option>
-                            <option value="eng">England</option>
-                            <option value="ita">Italy</option>
-                            <option value="spa">Spain</option>
-                            <option value="fra">France</option>
-                            <option value="ira">Iraq</option>
-                            <option value="por">Portugal</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" value="Sign In">
-                    </div>
-                </form>
-                <div class="toggle-form">
-                    <button onclick="showHome()">← Back to Home</button>
-                </div>
-            </div>
-        </div>
+        <!-- Footer -->
+        <footer>
+            <h3>🎥 Follow Us</h3>
+            <a href="http://www.youtube.com/@SagedSaad-z2m" target="_blank">
+                <button>📺 Join Our YouTube Channel</button>
+            </a>
+            <p>© 2026 Saged Electronics. All rights reserved.</p>
+            <p>Educational Electronics & Arduino Projects for Everyone</p>
+        </footer>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <h3>🎥 Follow Us</h3>
-        <a href="http://www.youtube.com/@SagedSaad-z2m" target="_blank">
-            <button>📺 Join Our YouTube Channel</button>
-        </a>
-        <p>© 2026 Saged Electronics. All rights reserved.</p>
-        <p>Educational Electronics & Arduino Projects for Everyone</p>
-    </footer>
-
     <script>
-        function showSignin() {
-            document.getElementById('mainContent').style.display = 'none';
-            document.getElementById('signinSection').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
+        function handleSignIn() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const birthday = document.getElementById('birthday').value;
+            const country = document.getElementById('country').value;
 
-        function showHome() {
-            document.getElementById('mainContent').style.display = 'block';
-            document.getElementById('signinSection').style.display = 'none';
-            window.scrollTo(0, 0);
-        }
-
-        function scrollToSection(sectionId) {
-            if (document.getElementById('signinSection').style.display === 'block') {
-                showHome();
+            if (!username || !password || !birthday || !country) {
+                alert('Please fill in all fields!');
+                return;
             }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long!');
+                return;
+            }
+
+            // Store user info
+            const countryName = document.querySelector('#country option:checked').text;
+            
+            // Show home page
+            document.getElementById('signinPage').style.display = 'none';
+            document.getElementById('homePage').style.display = 'block';
+
+            // Display user info
+            document.getElementById('displayName').textContent = username;
+            document.getElementById('displayCountry').textContent = countryName;
+            document.getElementById('displayBirthday').textContent = birthday;
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function logout() {
+            // Clear form
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('birthday').value = '';
+            document.getElementById('country').value = '';
+
+            // Show sign in page
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('signinPage').style.display = 'flex';
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+
+        function scrollTo(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
