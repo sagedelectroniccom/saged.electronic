@@ -111,7 +111,7 @@
             margin: 25px 0;
         }
         
-        .form-group input[type="submit"] {
+        .form-group button {
             background-color: #ff0000;
             color: white;
             cursor: pointer;
@@ -124,11 +124,11 @@
             margin-top: 10px;
         }
         
-        .form-group input[type="submit"]:hover {
+        .form-group button:hover {
             background-color: #cc0000;
         }
         
-        .form-group input[type="submit"]:active {
+        .form-group button:active {
             transform: scale(0.98);
         }
         
@@ -154,7 +154,7 @@
         </div>
 
         <!-- Sign In Form -->
-        <form id="signinForm" onsubmit="handleSignIn(event)">
+        <form id="signinForm">
             <div class="form-group">
                 <label for="username">👤 Username:</label>
                 <input id="username" type="text" name="username" placeholder="Enter your username" required>
@@ -192,39 +192,35 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Sign In & Continue →">
+                <button type="button" onclick="handleSignIn()">Sign In & Continue →</button>
             </div>
         </form>
     </div>
 
     <script>
-        function handleSignIn(event) {
-            event.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+        function handleSignIn() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
             const birthday = document.getElementById('birthday').value;
             const country = document.getElementById('country').value;
 
-            if (username.trim() === '' || password.trim() === '' || birthday === '' || country === '') {
+            if (username === '' || password === '' || birthday === '' || country === '') {
                 alert('Please fill in all fields!');
-                return false;
+                return;
             }
 
             if (password.length < 6) {
                 alert('Password must be at least 6 characters long!');
-                return false;
+                return;
             }
 
-            // Store user info in localStorage for display on home page
+            // Store user info in localStorage
             localStorage.setItem('userName', username);
             localStorage.setItem('userCountry', document.querySelector('#country option:checked').text);
             localStorage.setItem('userBirthday', birthday);
 
             // Redirect to home page
             window.location.href = 'home.html';
-            
-            return false;
         }
     </script>
 </body>
