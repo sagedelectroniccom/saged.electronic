@@ -154,7 +154,7 @@
         </div>
 
         <!-- Sign In Form -->
-        <form action="home.html" method="POST" onsubmit="return validateForm()">
+        <form id="signinForm" onsubmit="handleSignIn(event)">
             <div class="form-group">
                 <label for="username">👤 Username:</label>
                 <input id="username" type="text" name="username" placeholder="Enter your username" required>
@@ -198,7 +198,9 @@
     </div>
 
     <script>
-        function validateForm() {
+        function handleSignIn(event) {
+            event.preventDefault();
+            
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             const birthday = document.getElementById('birthday').value;
@@ -219,7 +221,10 @@
             localStorage.setItem('userCountry', document.querySelector('#country option:checked').text);
             localStorage.setItem('userBirthday', birthday);
 
-            return true;
+            // Redirect to home page
+            window.location.href = 'home.html';
+            
+            return false;
         }
     </script>
 </body>
