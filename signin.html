@@ -3,73 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - Saged Electronics</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Saged Electronics - Sign In</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
-        form { background: #f9f9f9; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        div { margin: 20px 0; }
-        label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
-        input, select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 14px; }
-        input:focus, select:focus { outline: none; border-color: #ff0000; box-shadow: 0 0 5px rgba(255,0,0,0.3); }
-        input[type="submit"] { background-color: #ff0000; color: white; cursor: pointer; font-weight: bold; font-size: 16px; }
-        input[type="submit"]:hover { background-color: #cc0000; }
-        hr { margin: 20px 0; border: 1px solid #ddd; }
-        .nav { margin-bottom: 20px; }
-        .nav a { color: #ff0000; text-decoration: none; font-weight: bold; }
-        .nav a:hover { text-decoration: underline; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        /* Sign In Container */
+        .signin-container {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 450px;
+            width: 100%;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Logo */
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo img {
+            max-width: 100px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+        
+        .logo h1 {
+            color: #ff0000;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+        
+        .logo p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ff0000;
+            box-shadow: 0 0 8px rgba(255,0,0,0.2);
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 25px 0;
+        }
+        
+        .form-group input[type="submit"] {
+            background-color: #ff0000;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .form-group input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+        
+        .form-group input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .signin-container {
+                padding: 30px 20px;
+            }
+            
+            .logo h1 {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="index.html">← Back to Home</a>
+    <div class="signin-container">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="https://yt3.googleusercontent.com/YrSWdYvPX4Kq8LLYbcpd8xNsvV5tfGqz6JW5i6ivscDWJctntgXTHhXRnoCk-0LJ0n0IUAUX=s120-c-k-c0x00ffffff-no-rj" alt="Saged Electronics Logo">
+            <h1>Saged Electronics</h1>
+            <p>Welcome to Our Community</p>
+        </div>
+
+        <!-- Sign In Form -->
+        <form action="home.html" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="username">👤 Username:</label>
+                <input id="username" type="text" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">🔒 Password:</label>
+                <input id="password" type="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="form-group">
+                <label for="birthday">🎂 Enter Your Birthday:</label>
+                <input id="birthday" type="date" name="birthday" required>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="form-group">
+                <label for="country">🌍 Choose Your Country:</label>
+                <select name="country" id="country" required>
+                    <option value="">-- Select a Country --</option>
+                    <option value="egy">Egypt</option>
+                    <option value="mor">Morocco</option>
+                    <option value="sa">Saudi Arabia</option>
+                    <option value="uae">United Arab Emirates</option>
+                    <option value="eng">England</option>
+                    <option value="ita">Italy</option>
+                    <option value="spa">Spain</option>
+                    <option value="fra">France</option>
+                    <option value="ira">Iraq</option>
+                    <option value="por">Portugal</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Sign In & Continue →">
+            </div>
+        </form>
     </div>
 
-    <form action="#" method="POST">
-        <h1 style="text-align: center; color: #333;">Sign In</h1>
-        
-        <div>
-            <label for="username">Username:</label>
-            <input id="username" type="text" name="username" required>
-        </div>
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const birthday = document.getElementById('birthday').value;
+            const country = document.getElementById('country').value;
 
-        <div>
-            <label for="password">Password:</label>
-            <input id="password" type="password" name="password" required>
-        </div>
+            if (username.trim() === '' || password.trim() === '' || birthday === '' || country === '') {
+                alert('Please fill in all fields!');
+                return false;
+            }
 
-        <hr>
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long!');
+                return false;
+            }
 
-        <div>
-            <label for="birthday">Enter Your Birthday:</label>
-            <input id="birthday" type="date" name="birthday" required>
-        </div>
+            // Store user info in localStorage for display on home page
+            localStorage.setItem('userName', username);
+            localStorage.setItem('userCountry', document.querySelector('#country option:checked').text);
+            localStorage.setItem('userBirthday', birthday);
 
-        <hr>
-
-        <div>
-            <label for="country">Choose Your Country:</label>
-            <select name="country" id="country" required>
-                <option value="">-- Select a Country --</option>
-                <option value="egy">Egypt</option>
-                <option value="mor">Morocco</option>
-                <option value="sa">Saudi Arabia</option>
-                <option value="uae">United Arab Emirates</option>
-                <option value="eng">England</option>
-                <option value="ita">Italy</option>
-                <option value="spa">Spain</option>
-                <option value="fra">France</option>
-                <option value="ira">Iraq</option>
-                <option value="por">Portugal</option>
-            </select>
-        </div>
-
-        <br>
-        <input type="submit" value="Sign In">
-    </form>
-
-    <div style="text-align: center; margin-top: 30px; color: #666;">
-        <p>© 2026 Saged Electronics. All rights reserved.</p>
-    </div>
+            return true;
+        }
+    </script>
 </body>
 </html>
