@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saged Electronics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        nav a, nav button {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: opacity 0.3s;
+            padding: 8px 15px;
+            border-radius: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        nav a:hover, nav button:hover {
+            background-color: rgba(255,255,255,0.2);
+            opacity: 0.9;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Welcome Section */
+        .welcome-banner {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: center;
+            border-left: 5px solid #ff0000;
+        }
+        
+        .welcome-banner h2 {
+            color: #ff0000;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-banner p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .user-info {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            color: #856404;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            color: #ff0000;
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        header img {
+            max-width: 150px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Sections */
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #ff0000;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ff0000;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #333;
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .section img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+        
+        footer h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        footer button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        footer button:hover {
+            background-color: #cc0000;
+        }
+        
+        footer a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        footer p {
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .section h2 {
+                font-size: 28px;
+            }
+            
+            .section h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">🏠 Home</a></li>
+            <li><a href="#electronics">📱 Electronics</a></li>
+            <li><a href="#arduino">🤖 Arduino</a></li>
+            <li><button onclick="logout()">🚪 Logout</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+            <h2>👋 Welcome, <span id="displayName">User</span>!</h2>
+            <p>You have successfully logged into Saged Electronics</p>
+            <div class="user-info">
+                <p><strong>📍 Country:</strong> <span id="displayCountry">-</span></p>
+                <p><strong>🎂 Birthday:</strong> <span id="displayBirthday">-</span></p>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header id="home">
+            <h1>Saged Electronics</h1>
+            <p style="font-size: 18px; color: #666; margin-top: 10px;">Educational Electronics & Arduino Projects</p>
+            <img src="https://yt3.googleusercontent.com/YrSWdYvPX4Kq8LLYbcpd8xNsvV5tfGqz6JW5i6ivscDWJctntgXTHhXRnoCk-0LJ0n0IUAUX=s120-c-k-c0x00ffffff-no-rj" alt="Saged Electronics Logo">
+        </header>
+
+        <!-- Electronics Section -->
+        <div class="section" id="electronics">
+            <h2>⚡ Electronics</h2>
+
+            <h3>🔧 Motors Section</h3>
+            <p>A motor is an electrical device that converts electrical energy into mechanical energy (motion). It works by using magnetic forces to make a shaft rotate, allowing machines, fans, pumps, and many other devices to move.</p>
+
+            <h3>💡 LED Section</h3>
+            <p>An LED is an electronic component that emits light when an electric current passes through it. LEDs are energy-efficient, long-lasting, and commonly used for lighting, displays, and indicators in electronic devices.</p>
+
+            <h3>🔌 Wires Section</h3>
+            <p>Wires are thin strands of metal, usually copper or aluminum, that carry electric current from one place to another in an electrical circuit. We use wires to connect batteries to circuits, power cords for appliances, household electrical wiring, connecting electronic components on a circuit board, and charging cables for phones and laptops.</p>
+
+            <h3>🔋 Batteries Section</h3>
+            <p>A battery is a device that stores chemical energy and converts it into electrical energy to power electrical and electronic devices. We use it in remote controls, flashlights, clocks, mobile phones, laptops, toys, and electric vehicles.</p>
+
+            <img src="data:image/jpeg;base64,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" alt="Electronics Components">
+        </div>
+
+        <!-- Arduino Section -->
+        <div class="section" id="arduino">
+            <h2>🤖 Arduino</h2>
+
+            <h3>🔩 Arduino Parts</h3>
+            <p>Arduino parts are the components that make up an Arduino board and allow it to receive input, process information, and control other devices. Examples of arduino parts include: Microcontroller (the "brain" of the Arduino that runs the program), USB Port (used to connect the Arduino to a computer for programming and power), Power Jack (used to supply external power), Digital Pins (used for digital input and output), Analog Pins (used to read analog signals from sensors), Reset Button (restarts the Arduino program), and Power Pins (provide power 5V, 3.3V, GND to components).</p>
+
+            <h3>⚙️ Arduino Components</h3>
+            <p>Arduino components are the electronic parts that are connected to an Arduino board to help it sense, control, and interact with the environment. Arduino components include: LED (produces light), Resistor (limits electric current), Push Button (provides user input), Buzzer (produces sound), Temperature Sensor (measures temperature), Servo Motor (provides controlled movement), and Ultrasonic Sensor (measures distance).</p>
+
+            <h3>💻 Programming Arduino</h3>
+            <p>Arduino programming is the process of writing and uploading code to an Arduino board so that it can control electronic components and perform specific tasks. Examples of arduino programming include: An Arduino program can be written to turn an LED on and off, read a sensor, or control a motor. Arduino uses a simplified version of C++ programming language that is easy to learn for beginners.</p>
+
+            <img width="300" height="200" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqZWqnWq1aL80KkQRSk9Ex2wG0HcEvn_9CEafaBycp-DRODXf9YyKD&usqp=CAE&s" alt="Arduino Board">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>🎥 Follow Us</h3>
+        <a href="http://www.youtube.com/@SagedSaad-z2m" target="_blank">
+            <button>📺 Join Our YouTube Channel</button>
+        </a>
+        <p>© 2026 Saged Electronics. All rights reserved.</p>
+        <p>Educational Electronics & Arduino Projects for Everyone</p>
+    </footer>
+
+    <script>
+        // Load user info from localStorage
+        window.addEventListener('load', function() {
+            const userName = localStorage.getItem('userName');
+            const userCountry = localStorage.getItem('userCountry');
+            const userBirthday = localStorage.getItem('userBirthday');
+
+            if (userName) {
+                document.getElementById('displayName').textContent = userName;
+            }
+            if (userCountry) {
+                document.getElementById('displayCountry').textContent = userCountry;
+            }
+            if (userBirthday) {
+                document.getElementById('displayBirthday').textContent = userBirthday;
+            }
+
+            // If no user data, redirect back to sign-in
+            if (!userName) {
+                setTimeout(() => {
+                    window.location.href = 'signin.html';
+                }, 2000);
+            }
+        });
+
+        function logout() {
+            // Clear user data
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userCountry');
+            localStorage.removeItem('userBirthday');
+            
+            // Redirect to sign-in page
+            window.location.href = 'signin.html';
+        }
+    </script>
+</body>
+</html>
